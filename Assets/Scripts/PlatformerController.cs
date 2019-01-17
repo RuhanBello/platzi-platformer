@@ -44,4 +44,10 @@ public class PlatformerController : MonoBehaviour {
             SceneManager.LoadScene(0);
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.name == "Enemy") {
+            SceneManager.LoadScene(0);
+        }
+    }
 }

@@ -38,4 +38,10 @@ public class PlatformerController : MonoBehaviour {
             GetComponentInChildren<Animator>().SetTrigger("Jump");
         }
     }
+
+    private void OnCollisionEnter(Collision collision) {
+        if(collision.gameObject.tag == "MetalBall") {
+            SceneManager.LoadScene(0);
+        }
+    }
 }

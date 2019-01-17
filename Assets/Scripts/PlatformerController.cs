@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlatformerController : MonoBehaviour {
     public float speed = 10;
+    public float jumpForce;
 
     private Rigidbody myRigidbody;
 
@@ -24,5 +25,9 @@ public class PlatformerController : MonoBehaviour {
 
         if (horizontal < 0)
             transform.rotation = Quaternion.Euler(0, -90, 0);
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            myRigidbody.AddForce(Vector3.up * jumpForce);
+        }
     }
 }
